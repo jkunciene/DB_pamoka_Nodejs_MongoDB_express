@@ -19,6 +19,10 @@ app.post('/api/user', async(req, res) => {
     const result = await user.save();
     res.send(result);
 });
+app.get('/api/users', async(req, res) => {
+    const result = await User.find();
+    res.send(result);
+})
 app.listen(3000, ()=>{
     console.log('serveris sukasi, galiu testuoti per Postman');
 });
